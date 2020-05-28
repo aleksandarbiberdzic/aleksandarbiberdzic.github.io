@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8" />
+<style>
+body, html { width: 100% ;margin-top:0;margin:auto;overflow-x:hidden;}
+ .page{
+	 
+background-image:url("test2.jpg");
+background-size:cover;
+background-repeat:no-repeat;
+margin:auto;
+width:99%;
+height:700px;
+margin:auto;
+margin-top:1%;
+webkit-box-shadow: 8px 8px 8px -6px black;
+	   -moz-box-shadow: 0 8px 6px -6px black;
+	        box-shadow: 8px 8px 12px -6px rgba(0, 0, 0, .8);
+		display:block;	
+}
+#navigation{
+
+height:138px;
+background-color:#6EC4DB;
+}
+.menu a{
+position:relative;
+right:57px;
+float:right;
+text-decoration:none;
+padding:10px 20px;
+background-color:#FFF7C0;
+border:2px solid black;
+margin-left:10px;
+color:black;
+transition:0.5s ease;
+font-weight:bold;
+}
+#mobile-menu{display:none;}
+
+
+
+.menu a:hover{
+
+background-color:#66AB8C;
+border:3px solid white;
+}
+.menu {
+position:absolute;
+right:0px;
+top:110px;
+}
+#midspaceg{
+width:100%;
+min-height:32px;
+background-color:#FA7C92;
+
+
+}
+#shadow{
+width:99%;
+margin:auto;
+
+
+	-webkit-box-shadow: 8px 8px 8px -6px black;
+	   -moz-box-shadow: 0 8px 6px -6px black;
+	        box-shadow: 8px 8px 12px -6px rgba(0, 0, 0, .8);
+}
+.logobanner{
+font-size:25px;
+position:relative;
+margin:auto;
+width:450px;
+position:relative;
+top:60%;
+text-align:center;
+
+font-weight:bold;
+margin-bottom:10px;
+color:white;
+cursor:pointer;
+padding:8px 8px;
+border:1px solid white;
+border-radius:28px;
+}
+.logobanner:hover{
+color:black;
+background-color:white;
+}
+#arrow {
+color:white;
+position:relative;
+top:60%;
+font-size:45px;
+text-align:center;
+}
+#banner2{
+opacity:0;
+transition:opacity 3s ease,transform 1s ease;
+color:white;
+font-family:font-family: "Comic Sans MS", "Comic Sans", cursive;
+font-size:33px;
+margin:auto;
+width:450px;
+position:relative;
+top:69%;
+text-align:center;
+}
+#banner3{
+opacity:0;
+transition:opacity 3s ease,transform 1s ease;
+font-family:font-family: "Comic Sans MS", "Comic Sans", cursive;
+font-size:27px;
+margin:auto;
+width:450px;
+position:relative;
+top:70%;
+text-align:center;
+color:white;
+}
+
+
+
+
+.sticky{
+position:fixed;
+top:0px;
+left:0px;
+width:100%;
+background-color:#6EC4DB;
+padding:10px 0px;
+-webkit-box-shadow: 8px 8px 8px -6px black;
+-moz-box-shadow: 0 8px 6px -6px black;
+box-shadow: 8px 8px 12px -6px rgba(0, 0, 0, .8);
+z-index:1000;
+}
+
+
+
+#banner3.banner-visible{
+transform:translate(0px,-60px);
+opacity:1;
+}
+#banner2.banner-visible{
+transform:translate(0px,-60px);
+opacity:1;
+}
+#searchbar{
+background-image:url("search.jpg");
+height:32px;
+width:32px;
+float:right;
+margin-right:50px;
+margin-bottom:10px;
+display:block;
+}
+#searchbar:hover{
+background-image:url("searchactive.jpg");
+cursor:pointer;
+}
+
+#searchshow{
+display:none;
+padding:15px 20px;
+background-color:#FFF7C0;
+color:black;
+position:absolute;
+right:26px;
+top:43px;
+z-index:1002;
+border-radius:20px;
+}
+
+
+.All_products{
+
+margin:auto;
+margin-top:7px;
+min-height:870px;
+height:100%;
+width:99%;
+-webkit-box-shadow: 8px 8px 8px -6px black;
+	   -moz-box-shadow: 0 8px 6px -6px black;
+	        box-shadow: 8px 8px 12px -6px rgba(0, 0, 0, .8);
+}
+
+#banner4{
+font-family:font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+.imagebox{
+margin-top:70px;
+width:23%;
+height:20%;
+
+float:left;
+margin-right:1.3%;
+cursor:pointer;
+border:1px solid #e8e8e8;
+border-radius:25px;
+padding-top:30px;
+transition:0.4s ease;
+
+
+}
+.imageproduct{
+height:65%;
+width:70%;
+display:block;
+margin:auto;
+padding-bottom:16px;
+transition:0.3s ease-out;
+}
+.boxes{
+margin-left:10px;
+margin-top:50px;
+display:block;
+}
+.prodcuttext{
+text-decoration:none;
+color:black;
+font-family:karlaregular,sans-serif;
+margin-top:15px;
+z-index:99999;
+}
+.producttext:hover{
+z-index:9999;
+}
+.imagebox:hover .prodcuttext{
+text-decoration:underline;
+color:#545454;
+}
+.imagebox:hover{
+padding-left:10px;
+padding-right:10px;
+border:1px solid #a1a1a1;
+}
+.imagebox:hover .imageproduct{
+transform: scale(1.2);
+
+}
+#pricebig{
+display:block;
+text-align:center;
+color:grey;
+font-size:20px;
+transition:color 1s ease;
+}
+#pricebig:hover{
+animation: shake 0.5s;
+animation-iteration-count: infinite;
+color:#B12704!important;
+}
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+
+#wish{
+text-decoration:none;
+color:black;
+font-size:25px;
+margin-left:50px;
+
+}
+#wish:hover{
+color:#ff1100;
+}
+#notification{
+display:none;
+padding:15px 20px;
+background-color:#FFF7C0;
+color:black;
+position:absolute;
+left:18px;
+top:43px;
+z-index:1002;
+border-radius:20px;
+
+}
+.heart {
+	text-decoration:none;margin-left:300px;position:relative;bottom:20px;right:20px;width:20px;height:10px;display:block;color:black;
+}
+.heart:hover{
+color:red;
+}
+
+.test{
+color:white;
+}
+.footer{	
+margin:auto;
+width:99%;
+height:350px;
+background-color:#FA7C92;
+-webkit-box-shadow: 8px 8px 8px -6px black;
+	   -moz-box-shadow: 0 8px 6px -6px black;
+	        box-shadow: 8px 8px 12px -6px rgba(0, 0, 0, .8);
+			margin-bottom:10px;
+}
+.inputbox{
+float:right;
+margin-right:10px;
+font-size:22px;
+height:34px;
+width:230px;
+padding:0px 10px;
+outline:none;
+background-color:#66AB8C;
+border:0px;
+color:black;
+}
+@media only screen and (max-width:600px){
+	.inputbox{
+		position:relative;
+		left:40px;
+		top:0px;
+		width:200px;
+		height:40px;
+	}
+	.footer{
+	height:400px;	
+	}
+
+	html,body{
+		
+	}
+#mobile-menu{
+	width:25px;
+	display:inline;
+	padding:5px;
+	position:relative;
+	top:5px;
+	color:#FFF7C0;
+	z-index:1000;
+}
+
+.menu{display:none;}
+#navigation{
+	height:40px;
+	
+}
+.page{
+	background-image:url("test2.jpg"),url("backgroundmobile2.jpg");
+	background-position:left top,left bottom;
+	background-repeat:no-repeat,no repeat;
+	background-size:100% 50%,100% 50%;
+	width:100%;
+	height:812px;
+	
+
+}
+.logobanner{
+	position:absolute;
+	top:305px;
+	left:20px;
+	color:white;
+	margin:auto;
+	width:88%;
+	z-index:0;
+}
+#arrow {
+position:relative;
+top:280px;
+}
+#banner2{
+	margin:auto;
+	width:300px;
+}
+#banner3{
+	margin:auto;
+	width:330px;
+}
+.All_products{
+width:414px;
+display:block;
+margin-top:7px;
+min-height:2900px;
+height:115%;
+
+-webkit-box-shadow: 8px 8px 8px -6px black;
+	   -moz-box-shadow: 0 8px 6px -6px black;
+	        box-shadow: 8px 8px 12px -6px rgba(0, 0, 0, .8);
+}
+.imagebox{
+margin-top:30px;
+width:333px;
+height:290px;
+display:block;
+
+cursor:pointer;
+border:1px solid #e8e8e8;
+border-radius:25px;
+padding-top:30px;
+transition:0.4s ease;
+
+
+}
+
+}
+#curtain{
+	position:fixed;
+	top:70px;
+	left:1px;
+	z-index:100000;
+	margin-left:1.5px;
+	display:block;
+	width:240px;
+	height:50%;
+	background-color:#6EC4DB;
+	display:none;
+}
+#curtain a{
+	position:relative;
+	top:10px;
+	display:block;
+	padding:10px;
+	text-decoration:none;
+	color:white;
+	font-size:20px;
+	margin:auto;
+}
+</style>
+</head>
+<body>
+<div id="shadow">
+<div id="midspaceg">
+<a href="wishlist.html" id="wish">&#10084;</a>
+<div id="notification">Wish list</div>
+<div id="searchbar"></div>
+<div id="searchshow"></div>
+</div>
+<div id="navigation">
+<div id="mobile-menu">
+<img src="menumobile.jpg"  width="25px" height="25px">
+<span style="position:absolute;top:5px;">Menu</span>
+</div>
+<div class="menu">
+<a href="">Room decor</a>
+<a href="">Other toys</a>
+<a href="">Slides for kids</a>
+<a href="">Balls</a>
+<a href="">Ball pit pools</a>
+
+</div>
+<div id="curtain">
+<a href="">Room decor</a>
+<a href="">Other toys</a>
+<a href="">Slides for kids</a>
+<a href="">Balls</a>
+<a href="">Ball pit pools</a>
+</div>
+</div>
+</div>
+
+<div class="page">
+
+<div class="logobanner" onclick="scrollslowly()"> Looking for foam ball pitts?</div>
+<div id="arrow">&#8681;</div>
+<div id="banner2">Fun Joy happiness</div>
+<div id="banner3"><i>That can fit in any room and budget</i></div>
+</div>
+
+<div class="All_products">
+<span id="banner4" style="margin:50px 0px 0px 50px;position:relative;top:50px;font-size:24px;font-style:italic;">BALL PITS COLLECTION</span>
+<div class="boxes">
+<div class="imagebox">
+<img style=";" class="imageproduct" onclick="location.href='deluxe-kids-round-ball-pitt-grey.html';">
+<a href="deluxe-kids-round-ball-pitt-grey.html" style="display:block;text-align:center;font-family:karlaregular,sans-serif;" class="prodcuttext">Deluxe Kids Round Ball Pit</a>
+<span id="pricebig">$109<span style="font-size:15px;color:#c5c9c6;position:relative;bottom:3px;">99</span></span>
+<a   class="heart">&#10084;</a>
+</div>
+
+<div class="imagebox">
+<img style="" class="imageproduct" onclick="location.href='grey-kiddie-ball-pitt.html';">
+<a href="grey-kiddie-ball-pitt.html" style="display:block;text-align:center;font-family:karlaregular,sans-serif;" class="prodcuttext">Grey Kiddie Ball Pit Pool</a>
+<span id="pricebig">$89<span style="font-size:15px;color:#c5c9c6;position:relative;bottom:3px;">99</span></span>
+<a  class="heart">&#10084;</a>
+</div>
+<div class="imagebox">
+<img style="" class="imageproduct" onclick="location.href='deluxe-kids-round-ball-pitt-light-blue.html';">
+<a href="deluxe-kids-round-ball-pitt-light-blue.html" style="display:block;text-align:center;font-family:karlaregular,sans-serif;" class="prodcuttext">Wonder Space Deluxe Kids Ball Pit</a>
+<span id="pricebig">$125<span style="font-size:15px;color:#c5c9c6;position:relative;bottom:3px;">99</span></span>
+<a   class="heart">&#10084;</a>
+</div>
+<div class="imagebox">
+<img style="" class="imageproduct" onclick="location.href='deluxe-kids-round-ball-pitt-light-pink.html';">
+<a href="deluxe-kids-round-ball-pitt-light-pink.html" style="display:block;text-align:center;font-family:karlaregular,sans-serif;" class="prodcuttext">Deluxe Kids Round Ball Pit</a>
+<span id="pricebig">$189<span style="font-size:15px;color:#c5c9c6;position:relative;bottom:3px;">99</span></span>
+<a  class="heart">&#10084;</a>
+</div>
+<div class="imagebox">
+<img style="" class="imageproduct" onclick="location.href='funtress-memory-foam.html';">
+<a href="funtress-memory-foam.html" style="display:block;text-align:center;font-family:karlaregular,sans-serif;" class="prodcuttext">90X30cm Certified Foam Ball Pit</a>
+<span id="pricebig">$79<span style="font-size:15px;color:#c5c9c6;position:relative;bottom:3px;">68</span></span>
+<a  class="heart">&#10084;</a>
+
+</div>
+<div class="imagebox">
+<img style="" class="imageproduct" onclick="location.href='tweepsy-soft-baby-ball-square.html';">
+<a href="tweepsy-soft-baby-ball-square.html" style="display:block;text-align:center;font-family:karlaregular,sans-serif;" class="prodcuttext">90x90x40cm Soft Baby Pool Pit</a>
+<span id="pricebig">$125<span style="font-size:15px;color:#c5c9c6;position:relative;bottom:3px;">00</span></span>
+<a   class="heart">&#10084;</a>
+</div>
+<div class="imagebox">
+<img style="" class="imageproduct" onclick="location.href='tweepsy-white.html';">
+<a href="tweepsy-white.html" style="display:block;text-align:center;font-family:karlaregular,sans-serif;" class="prodcuttext">90X40cm/250 Balls Baby Foam Ball Pit</a>
+<span id="pricebig">$149<span style="font-size:15px;color:#c5c9c6;position:relative;bottom:3px;">99</span></span>
+<a   class="heart">&#10084;</a>
+</div>
+<div class="imagebox">
+<img style="" class="imageproduct" onclick="location.href='tweepsy-black.html';">
+<a href="tweepsy-black.html" style="display:block;text-align:center;font-family:karlaregular,sans-serif;" class="prodcuttext">Soft Baby Quarter Round Ball Pool Pit</a>
+<span id="pricebig">$125<span style="font-size:15px;color:#c5c9c6;position:relative;bottom:3px;">00</span></span>
+<a  class="heart">&#10084;</a>
+</div>
+</div>
+
+</div>
+
+
+<script>
+
+var heart=document.getElementById("wish");
+var notification=document.getElementById("notification");
+heart.addEventListener("mouseover",function(){notification.style.display="block";});
+heart.addEventListener("mouseout",function(){notification.style.display="none";});
+/*BANNER2,3 ANIMATION EFFECT*/
+var element=document.getElementById("banner3");
+var element2=document.getElementById("banner2");
+var page=document.getElementsByClassName("All_products")[0];
+function isVisible(element){
+var object=element.getBoundingClientRect();
+var object1=page.getBoundingClientRect();
+if((object.top<=0 && object.bottom<=0)||((object.top>=window.innerHeight) && (object.bottom>=window.innerHeight))){
+return false;
+}
+
+else{
+return true;
+}
+
+
+
+}
+function loop(){
+
+if(isVisible(element)){
+
+element.classList.add("banner-visible");
+element2.classList.add("banner-visible");
+
+}
+
+else{
+element.classList.remove("banner-visible");
+element2.classList.remove("banner-visible");
+
+}
+window.requestAnimationFrame(loop);
+}
+loop();
+/*END BANNER2,3 ANIMATION EFFECT*/
+var mobilemenu=document.getElementById("mobile-menu");
+var menu=document.getElementsByClassName("menu");
+var navigationh=document.getElementById("navigation").offsetHeight;
+var search=document.getElementById("searchbar");
+var searchbuttonclick=0;
+var images=document.getElementsByClassName("imageproduct");
+/*LOADING IMAGES ON SCROLL*/
+window.onscroll=function(){
+if(document.documentElement.scrollTop>=300 || document.body.scrollTop>=300){
+for(var j=1;j<=8;j++)
+{
+images[(j-1)].setAttribute("src","product"+j+".webp");
+}
+}
+/*LOADING IMAGES ON SCROLL END*/
+/*ADJUSTING STICKY BAR ON SCROLL*/
+
+if(document.documentElement.scrollTop>=navigationh  || document.body.scrollTop>=navigationh)
+{
+
+menu[0].classList.add("sticky");
+mobilemenu.style.position="fixed";
+mobilemenu.style.top="0px";
+mobilemenu.style.width="96.7%";
+mobilemenu.style.backgroundColor="#6EC4DB";
+}
+else{
+menu[0].classList.remove("sticky");
+document.getElementById("navigation").classList.remove("sticky");
+mobilemenu.style.position="relative";
+mobilemenu.style.top="5px";
+}
+}
+/*ADJUSTING STICKY BAR ON SCROLL END*/
+
+/*SEARCH HELP NOTIFICATION POPUP AND POPOUT*/
+searchbar.addEventListener("mouseover",popup);
+function popup(){
+document.getElementById("searchshow").innerHTML="Search";
+document.getElementById("searchshow").style.display="block";
+}
+searchbar.addEventListener("mouseout",popout);
+function popout(){
+document.getElementById("searchshow").style.display="none";
+}
+/*SEARCH HELP NOTIFICATION POPUP AND POPOUT END*/
+
+/*LOADING SEARCH BAR*/
+search.addEventListener("click",showsearchbox);
+function showsearchbox() {
+var inbox=document.getElementsByTagName("input");
+if(searchbuttonclick==0){
+var searchbox=document.createElement("input");
+searchbox.setAttribute("autofocus","true");
+var midspaceg=document.getElementById("midspaceg");
+var box=midspaceg.appendChild(searchbox);
+
+inbox[0].setAttribute("class","inputbox");
+
+inbox[0].setAttribute("placeholder","Search products...");
+searchbuttonclick=1;
+}
+else{
+inbox[0].remove();
+searchbuttonclick=0;
+}
+}
+/*LOADING SEARCH BAR END*/
+
+/*SCROLL DOWN BUTTON*/
+function scrollslowly(){
+var i=0;
+var x=setInterval(scrolldown,1);
+function scrolldown(){
+if(i<850){
+window.scrollTo(0,i++);
+}
+else{clearInterval(x);}
+}
+}
+/*SCROLL DOWN BUTTON END*/
+
+var mobilemenucounter=0;
+mobilemenu.addEventListener("click",function(){
+	if(mobilemenucounter==0){
+document.getElementById("curtain").style.display="block";
+mobilemenucounter=1;
+	}
+	else{
+	document.getElementById("curtain").style.display="none";	
+	mobilemenucounter=0;
+	}
+});
+
+</script>
+
+<script src="All_products2.js"></script>
+<script src="wishlistcookie.js"></script>
+
+</body>
+</html>
