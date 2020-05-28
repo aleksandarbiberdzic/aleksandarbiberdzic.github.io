@@ -94,7 +94,7 @@ window.addEventListener("scroll",function(){
 	console.log("Scrolled:"+document.documentElement.scrollTop);
 	console.log("ClientHeight:"+document.documentElement.clientHeight);
 	console.log("ScrollHeight:"+document.documentElement.scrollHeight);
-if((document.documentElement.scrollTop+document.documentElement.clientHeight>=document.documentElement.scrollHeight-50 ) && ((counter+8)<=size)){
+if((document.documentElement.scrollTop+document.documentElement.clientHeight>=document.documentElement.scrollHeight-100 ) && ((counter+8)<=size)){
 	
 var articles=document.createElement("div");
 articles.classList.add("All_products");
